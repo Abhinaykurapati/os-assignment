@@ -1,4 +1,6 @@
 #include<stdio.h>
+#include<conio.h>
+#include<math.h>
 void main()
 {
 	int burst_time[30];
@@ -43,16 +45,16 @@ void main()
 	}
 	avg_waiting_time=(float)total/n;
 	total=0;
-	printf("\n Process number \t Estimated time \t Waiting time \t Turn Around Time");
+	printf("\n Process number \t Waiting time  \t Estimated time\t Turn Around Time");
 	for(i=0;i<n;i++)
 	{
 		turn_around_time[i]=burst_time[i] + waiting_time[i];   //turn around Time
 		total+= turn_around_time[i];
-		printf("\np%d \t \t\t   %d \t \t\t   %d\t\t\t  mn%d",p[i],burst_time[i],waiting_time[i],turn_around_time[i]);
+		printf("\np%d \t \t\t   %d \t \t\t   %d\t\t\t  %d",p[i],waiting_time[i],burst_time[i],turn_around_time[i]);
 	}
 	avg_turn_around_time=(float)total/n;            //avd_tat
-  printf("\n\n Averrage waiting time=%f",avg_waiting_time);
-	printf("\n Avewrage Turn around time =%f \n",avg_turn_around_time);
+	printf("\n \n Average Turn around time =%f \n",avg_turn_around_time);
+	printf("\nAverage waiting time=%f",avg_waiting_time);
 		
 }
 
